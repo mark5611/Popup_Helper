@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "popupHelper",
+  "version": "1.0",
+  "permissions": ["menus", "activeTab","search"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Helper"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
