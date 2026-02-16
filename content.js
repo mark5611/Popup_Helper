@@ -15,3 +15,7 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 function readHighlightedText(text) {
     window.alert(text)
 }
+
+function performSearch(text){
+
+}

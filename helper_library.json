@@ -1,0 +1,8 @@
+{
+  "Archive":[
+    {"id": 1, "content": "complex numbers have a real part 'a' and an imaginary part 'b*i'"},
+    {"id": 2, "content": "binominal coefficient yield how many different ways you can pick from k elements"},
+    {"id": 3, "content": "a surjective function has at least one correct answer"},
+    {"id": 4, "content": "an injective function has at most one correct answer"}
+  ]
+}
