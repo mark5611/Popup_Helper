@@ -34,18 +34,18 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 //browser notification
-/*
+
 function sendAnswerToUser(text) {
     window.alert(text);
-}*/
+}
 
 //system level notification
+/*
 function sendAnswerToUser(text){
-    Notification.requestPermission().then((result) => {
-      console.log(result)
+    Notification.requestPermission().then(() => {
         let notification = new Notification(text);
     })
-}
+}*/
 
 
 function search(query){
