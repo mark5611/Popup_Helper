@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Helper.V1",
+  "name": "Helper.Beta",
   "version": "1.0",
   "permissions": ["menus", "activeTab","search"],
   "background": {

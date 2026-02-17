@@ -10,7 +10,7 @@ browser.menus.onClicked.addListener(function(info, tab) {
 });
 
 browser.menus.create({
-    id: "helper",
+    id: "Helper",
     title: "Help",
     contexts: ["selection"]
 });

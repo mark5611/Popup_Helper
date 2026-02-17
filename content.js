@@ -32,13 +32,13 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     return true;
 });
 
-//browser notification
+//browser notification.
 
 function sendAnswerToUser(text) {
     window.alert(text);
 }
 
-//system level notification
+//system level notification.
 /*
 function sendAnswerToUser(text){
     Notification.requestPermission().then(() => {
