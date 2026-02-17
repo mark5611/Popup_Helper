@@ -4,11 +4,6 @@ browser.menus.onClicked.addListener(function(info, tab) {
     console.log("Helper activated");
 
     browser.tabs.sendMessage(tab.id, {
-        action: "processSearchRequest",
-        text: search()
-    });
-
-    browser.tabs.sendMessage(tab.id, {
         action: "processSelection",
         text: info.selectionText
     }).catch(err => {
@@ -18,17 +13,12 @@ browser.menus.onClicked.addListener(function(info, tab) {
 
 browser.menus.create({
     id: "helper",
-    title: "---AskHelper---",
+    title: "Help",
     contexts: ["selection"]
 }, function() {
     console.log("Menu created successfully");
 });
 
-function search() {
-    browser.search.query({
-        text: "styracosaurus",
-    });
-    return "searched"
-}
+
 
 console.log("Background fully loaded");
