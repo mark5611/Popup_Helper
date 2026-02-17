@@ -1,4 +1,3 @@
-console.log("content.js loaded");
 
 const Archive =[
     {"content": "complex numbers: real part 'a' and an imaginary part 'b*i'"},
