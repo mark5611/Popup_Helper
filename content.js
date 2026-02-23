@@ -1,12 +1,14 @@
-import {Archive} from "./background"
-
-const Archive = "ca"
-
-console.log(Archive)
+let Archive = []
 
 browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "processSelection") {
+        let requestArchive = request.Archive_data
+
+        for (let i = 0; i < requestArchive.length; i++) {
+            Archive.push({"content": requestArchive[i]})
+        }
         let answer = search(request.text.toLowerCase());
+
         if (answer !== undefined){
             sendAnswerToUser(answer);
         }else{

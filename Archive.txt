@@ -1,4 +1,7 @@
-a
-b
-c
-d
+complex numbers: real part 'a' and an imaginary part 'b*i'
+Binomial Coefficient: choose k from n, disregard order
+Surjectivity: at least one correct answer
+Injectivity: at most one correct answer
+Eigenvalue: scalar * non-zero eigenvector == non-zero eigenvector * matrix A
+Powerset: set of all possible subsets
+congruent modulo: divides a-b

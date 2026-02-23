@@ -1,24 +1,34 @@
-function readArchive(file){
-    let Archive = []
-    fetch('Archive.txt')
-        .then((resp) => resp.text())
-        .then(text => {
-            for (let i = 0; i < text.length; i++) {
-                let current_text = text[i]
-                if (current_text !== "\n") {
-                    Archive.push({"content": current_text})
-                }
-            }
-        })
-        .catch(e => console.log(e))
-    return Archive
+let Archive = []
+
+//read the provided file
+async function readArchive(file) {
+    let broken_down = [];
+    try {
+        const resp = await fetch('Archive.txt');
+        const text = (await resp.text()).split("\n");
+        for(let txt in text){
+            broken_down.push(text[txt])
+        }
+        return broken_down;
+    } catch (error) {
+        console.error("Fetch failed:", error);
+        return broken_down;
+    }
 }
 
-browser.menus.onClicked.addListener(function(info, tab) {
 
+readArchive('Archive.txt').then(broken_down => {
+    Archive = broken_down
+}).catch(error => {
+    console.error("Error:", error);
+});
+
+
+browser.menus.onClicked.addListener(function(info, tab) {
     browser.tabs.sendMessage(tab.id, {
         action: "processSelection",
-        text: info.selectionText
+        text: info.selectionText,
+        Archive_data: Archive
     }).catch(err => {
         console.log("No content script:", err.message);
     });
