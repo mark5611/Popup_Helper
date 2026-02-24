@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+          content="script-src-attr 'unsafe-hashes' 'sha256-UoDMEDYM/UZ7GymbRMiZR3LHJMUu18EVJ4Eo6HXWclg='; script-src 'self' 'wasm-unsafe-eval'">
+    <title>Loader For Helper</title>
+    <script src="loader_controller.js"></script>
+    <style>
+        body{
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        textarea{
+            resize: none;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .textdiv{
+            padding-bottom: 30px;
+        }
+        button{
+            padding: 5px 10px;
+            background-color: transparent;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: grey;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="textdiv"><textarea placeholder="Type Input Here" id="inputArea"></textarea></div>
+    <button id="addBtn">Add To Archive</button>
+</body>
+</html>

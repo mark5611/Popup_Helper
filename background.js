@@ -25,19 +25,54 @@ readArchive('Archive.txt').then(broken_down => {
 
 
 browser.menus.onClicked.addListener(function(info, tab) {
-    browser.tabs.sendMessage(tab.id, {
-        action: "processSelection",
-        text: info.selectionText,
-        Archive_data: Archive
-    }).catch(err => {
-        console.log("No content script:", err.message);
-    });
+    if(info.menuItemId === "Helper"){
+            console.log("called Helper")
+            browser.tabs.sendMessage(tab.id, {
+            action: "processSelection",
+            text: info.selectionText,
+            Archive_data: Archive
+        }).catch(err => {
+            console.log("No content script:", err.message);
+        });
+    }
+    if(info.menuItemId === "Load"){
+        console.log("called loader")
+        let popupURL = browser.extension.getURL("loader.html");
+
+        let creating = browser.windows.create({
+            url: popupURL,
+            type: "popup",
+            height: 1000,
+            width: 700,
+        });
+        creating.then(onCreated, onError);
+    }
+
 });
 
+
+
+
+function onCreated(windowInfo) {
+    console.log(`Created window: ${windowInfo.id}`);
+}
+
+function onError(error) {
+    console.log(`Error: ${error}`);
+}
+
+
+//create helper
 browser.menus.create({
     id: "Helper",
     title: "Help",
     contexts: ["selection"]
+});
+
+//create loader
+browser.menus.create({
+    id: "Load",
+    title: "loader",
 });
 
 

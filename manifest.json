@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Helper.Beta",
   "version": "1.0",
-  "permissions": ["menus", "activeTab","search"],
+  "permissions": ["menus", "activeTab","search", "tabs", "storage"],
   "background": {
     "scripts": ["background.js"],
     "persistent": true
@@ -21,7 +21,7 @@
     "default_title": "Helper"
   },
 
-  "web_accessible_resources": ["Archive.txt"],
+  "web_accessible_resources": ["Archive.txt", "loader.html"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
