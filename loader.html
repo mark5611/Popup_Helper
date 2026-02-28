@@ -3,41 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy"
-          content="script-src-attr 'unsafe-hashes' 'sha256-UoDMEDYM/UZ7GymbRMiZR3LHJMUu18EVJ4Eo6HXWclg='; script-src 'self' 'wasm-unsafe-eval'">
+          content="script-src-attr 'unsafe-hashes' 'sha256-C9Pc74x5BP660fRg4HJ6AmFM9IpoprZO7TSDFKmjYzw='; script-src 'self' 'wasm-unsafe-eval' 'sha256-C9Pc74x5BP660fRg4HJ6AmFM9IpoprZO7TSDFKmjYzw='">
     <title>Loader For Helper</title>
     <script src="loader_controller.js"></script>
     <style>
-        body{
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        textarea{
-            resize: none;
-            width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-        .textdiv{
-            padding-bottom: 30px;
-        }
-        button{
-            padding: 5px 10px;
-            background-color: transparent;
-            border: 1px solid grey;
-            border-radius: 5px;
-        }
-        button:hover{
-            background-color: grey;
-            color: white;
-            border: none;
-        }
+
     </style>
 </head>
 <body>
-    <div class="textdiv"><textarea placeholder="Type Input Here" id="inputArea"></textarea></div>
-    <button id="addBtn">Add To Archive</button>
+<form method="post" enctype="multipart/form-data" id="fileForm">
+    <div>
+        <label for="file">Choose file to upload</label>
+        <input type="file" id="file" name="file" multiple />
+    </div>
+</form>
+<div>
+    <button id="close">Done</button>
+</div>
 </body>
 </html>

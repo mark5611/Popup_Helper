@@ -36,7 +36,6 @@ browser.menus.onClicked.addListener(function(info, tab) {
         });
     }
     if(info.menuItemId === "Load"){
-        console.log("called loader")
         let popupURL = browser.extension.getURL("loader.html");
 
         let creating = browser.windows.create({
@@ -45,21 +44,9 @@ browser.menus.onClicked.addListener(function(info, tab) {
             height: 1000,
             width: 700,
         });
-        creating.then(onCreated, onError);
     }
 
 });
-
-
-
-
-function onCreated(windowInfo) {
-    console.log(`Created window: ${windowInfo.id}`);
-}
-
-function onError(error) {
-    console.log(`Error: ${error}`);
-}
 
 
 //create helper
@@ -73,6 +60,7 @@ browser.menus.create({
 browser.menus.create({
     id: "Load",
     title: "loader",
+    contexts: ["page"]
 });
 
 

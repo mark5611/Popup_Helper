@@ -1,24 +1,31 @@
+let fileContent = ""
 document.addEventListener("DOMContentLoaded", () => {
-    let btn = document.getElementById("addBtn")
 
-    if (btn !== undefined && btn !== null && btn) {
+    const elem = document.getElementById("file")
+    const done = document.getElementById("done")
 
-        btn.addEventListener("click", () => {
-            getText()
+    elem.addEventListener('change', getFile)
+
+});
+
+
+
+function getFile(event) {
+    const input = event.target
+    if ('files' in input && input.files.length > 0) {
+        let file = input.files[0]
+        readFileContent(file).then(content => {
+            fileContent = content
+            console.log(fileContent)
         })
     }
-})
+}
 
-
-function getText(){
-    import("fs").then((fs) => {
-        const outputFilePath = './Archive.txt';
-        fs.writeFileSync(outputFilePath, "Hello, World!\nThis is a new line of text.\n", 'utf-8');
-        console.log(`Text written to ${outputFilePath} using 'w' mode.`);
+function readFileContent(file) {
+    const reader = new FileReader()
+    return new Promise((resolve, reject) => {
+        reader.onload = event => resolve(event.target.result)
+        reader.onerror = error => reject(error)
+        reader.readAsText(file)
     })
-
-
-    let textarea = document.getElementById("inputArea")
-    let txt = textarea.value
-    textarea.value = ""
 }

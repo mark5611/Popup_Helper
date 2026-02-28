@@ -39,4 +39,3 @@ function search(query){
         return Archive.filter(doc => doc.content.toLowerCase().includes(query))[0]["content"];
     }
 }
-

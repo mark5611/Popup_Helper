@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Helper.Beta",
   "version": "1.0",
-  "permissions": ["menus", "activeTab","search", "tabs", "storage"],
+  "permissions": ["menus", "activeTab","search", "tabs", "downloads"],
   "background": {
     "scripts": ["background.js"],
     "persistent": true
