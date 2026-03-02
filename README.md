@@ -1,4 +1,4 @@
-Browser Add-on for cheating.
+Open Source Browser Add-on for cheating.
 Provides the answers from an uploaded Source.
 
 Steps for Use:
