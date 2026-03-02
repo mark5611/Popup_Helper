@@ -1,5 +1,6 @@
 Open Source Browser Add-on for cheating.
 Provides the answers from an uploaded Source.
+- version 1.00, using pre loaded Source
 
 Steps for Use:
   1) Clone the repo into a chosen directory
