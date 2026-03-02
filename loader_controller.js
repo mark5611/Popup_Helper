@@ -2,10 +2,13 @@ let fileContent = "asd"
 document.addEventListener("DOMContentLoaded", () => {
 
     const elem = document.getElementById("file")
-    const done = document.getElementById("done")
+    const done = document.getElementById("close")
 
     elem.addEventListener('change', getFile)
 
+    done.addEventListener("click", () =>{
+        window.close()
+    })
 
 });
 
