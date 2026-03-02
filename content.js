@@ -1,12 +1,12 @@
 let Archive = []
-
 browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.action === "processSelection") {
-        let requestArchive = request.Archive_data
 
-        for (let i = 0; i < requestArchive.length; i++) {
-            Archive.push({"content": requestArchive[i]})
-        }
+    if (request.action === "processSelection") {
+
+        Archive = []
+        let requestArchive = request.sentArchive
+        parseArchive(requestArchive)
+
         let answer = search(request.text.toLowerCase());
 
         if (answer !== undefined){
@@ -19,8 +19,15 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     return true;
 });
 
-//browser notification.
+function parseArchive(archive){
+    for (let i = 0; i < archive.length; i++) {
+        Archive.push({"content": archive[i]})
+    }
+    console.log(Archive)
+}
 
+
+//browser notification.
 function sendAnswerToUser(text) {
     window.alert(text);
 }

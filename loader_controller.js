@@ -1,4 +1,4 @@
-let fileContent = ""
+let fileContent = "asd"
 document.addEventListener("DOMContentLoaded", () => {
 
     const elem = document.getElementById("file")
@@ -6,17 +6,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elem.addEventListener('change', getFile)
 
+
 });
 
+function clearStorage(){
+    window.localStorage.clear()
+}
 
+function parseFileContent(content){
+    let parse = content.split("\n")
+    for (let i = 0; i < parse.length; i++) {
+        window.localStorage.setItem(i.toString(), parse[i])
+    }
+}
 
 function getFile(event) {
     const input = event.target
     if ('files' in input && input.files.length > 0) {
         let file = input.files[0]
         readFileContent(file).then(content => {
+            clearStorage()
             fileContent = content
-            console.log(fileContent)
+            parseFileContent(fileContent)
         })
     }
 }
