@@ -3,7 +3,7 @@ Provides the answers from an uploaded Source.
 - version 1.00, using pre loaded Source
 
 Steps before Use:
-  1) Clone the repo into a chosen directory // Alternatively one can download the .zip from the <>CODE menu
+  1) Clone the repo into a chosen directory // Alternatively one can download the .zip from the <CODE>Code menu
   2) Load the Temporary Add-on
   3) Load a Source for the Archive
 
