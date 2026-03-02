@@ -2,13 +2,13 @@ Open Source Browser Add-on for cheating.
 Provides the answers from an uploaded Source.
 - version 1.00, using pre loaded Source
 
-Steps for Use:
+Steps before Use:
   1) Clone the repo into a chosen directory
   2) Load the Temporary Add-on
   3) Load a Source for the Archive
 
 Loading the Temporary Add-on:
-  - Click the extensions > Manage Extensions > click on Settings > Debug Add-ons > Load Temporary Add-on > navigate to the cloned directory and select the manifest.js
+  - Click the extensions > Manage Extensions > click on Settings > Debug Add-ons > Load Temporary Add-on > navigate to the cloned directory and select the manifest.json
 
   - note: After completely closing the browser the user has to reload the Add-on. However, the repo only needs to be cloned once
 
