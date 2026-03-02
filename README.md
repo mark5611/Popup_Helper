@@ -1,4 +1,4 @@
-Open Source Browser Add-on.
+Open Source Firefox Add-on.
 Provides the answers from an uploaded Source.
 - version 1.00, using pre loaded Source
 
