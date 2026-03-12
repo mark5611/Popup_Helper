@@ -1,15 +1,14 @@
-let Archive = []
+let Archive = {}
 browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     if (request.action === "processSelection") {
 
-        Archive = []
-        let requestArchive = request.sentArchive
-        parseArchive(requestArchive)
+        Archive = request.sentArchive
+        console.log(Archive)
 
         let answer = search(request.text.toLowerCase());
 
-        if (answer !== undefined){
+        if (typeof(answer) === "string"){
             sendAnswerToUser(answer);
         }else{
             sendAnswerToUser("N/A")
@@ -42,7 +41,9 @@ function sendAnswerToUser(text){
 
 
 function search(query){
-    if (Archive.filter(doc => doc.content.toLowerCase().includes(query))[0] !== undefined){
-        return Archive.filter(doc => doc.content.toLowerCase().includes(query))[0]["content"];
+    if (Object.keys(Archive).includes(query)){
+        return Archive[query];
+    }else{
+        return undefined
     }
 }

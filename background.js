@@ -25,9 +25,13 @@ browser.menus.onClicked.addListener(function(info, tab) {
 
 function getFromStorage(){
     let storageDataLength = window.localStorage.length
-    let tempArchive = []
+    let tempArchive = {}
     for (let i = 0; i < storageDataLength; i++) {
-        tempArchive.push(window.localStorage.getItem(i.toString()))
+        let line = window.localStorage.getItem(i.toString())
+        if(line.includes(":")) {
+            let partedLine = line.split(":")
+            tempArchive[partedLine[0]] = partedLine[1]
+        }
     }
     return tempArchive
 }
