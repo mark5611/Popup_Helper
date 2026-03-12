@@ -18,13 +18,6 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     return true;
 });
 
-function parseArchive(archive){
-    for (let i = 0; i < archive.length; i++) {
-        Archive.push({"content": archive[i]})
-    }
-    console.log(Archive)
-}
-
 
 //browser notification.
 function sendAnswerToUser(text) {
